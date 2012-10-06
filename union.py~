@@ -1,0 +1,9 @@
+'''
+This is the  union module that is responsible make sure to populate our tocrawl data structure with url to be crawled
+It also makes sure that it does not duplicate the urls
+'''
+class union
+	def union(a, all_links_on_page):
+	    for url in all_links_on_page:
+	        if url not in tocrawl:
+            to_crawl.append(url)
