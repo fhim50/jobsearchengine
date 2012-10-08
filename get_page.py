@@ -8,7 +8,6 @@ class get_content():
         try:
             a=urlopen(url)
             page=a.read()
-            print page
             return page
         except:
             return ""
