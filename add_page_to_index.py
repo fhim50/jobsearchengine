@@ -11,8 +11,11 @@ class Index():
     @staticmethod
     def add_page_to_index(index, url, content):
         words = content.split()
+        content_parsed=open('content_parse.txt','a')
         for word in words:
             
-            Add_word_index.add_to_word_index(index, word, url)
+            content_parsed.write(word)
             
+            Add_word_index.add_to_word_index(index, word, url)
+        content_parsed.close() 
         return

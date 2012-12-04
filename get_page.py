@@ -10,6 +10,6 @@ class get_content():
             page=a.read()
             return page
         except:
-            return ""
+            return "can not access the web"
         return ""
             
