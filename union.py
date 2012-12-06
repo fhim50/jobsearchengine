@@ -10,5 +10,4 @@ class Blend():
 		for url in all_links_on_page:
 			if url not in to_crawl:
 				to_crawl.append(url)
-		
-	
+			
