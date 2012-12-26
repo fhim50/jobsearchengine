@@ -34,7 +34,7 @@ def make_index(index, url, content_soup):
         word=word.lower()
         
         if word not in stopwords:
-           #add_to_search_index(index,word,url)
-           print word
+           add_to_search_index(index,word,url)
+           
         
 # make_index({}, 'http://www.google.com', soup('')) 

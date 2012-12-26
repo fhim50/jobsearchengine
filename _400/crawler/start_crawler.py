@@ -6,6 +6,7 @@ from union import add_to_tocrawl
 
 def crawl_web(seed):
     tocrawl = [seed]
+    
     crawled = []
     index = {}
     while tocrawl:
@@ -18,4 +19,8 @@ def crawl_web(seed):
             add_to_tocrawl(tocrawl, outlinks)
             crawled.append(page_url)
     return index
-crawl_web('http://joblistghana.com')
+
+if __name__=='__main__':
+     crawl_web('http://joblistghana.com')
+else:
+    pass

@@ -7,6 +7,7 @@ def add_to_tocrawl(to_crawl,outlinks):
 		for url in outlinks:
 			if url not in to_crawl:
 				to_crawl.append(url)
+		
 	except:
 		print 'problem from union.add_tocrawl :check link'
 			

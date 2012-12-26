@@ -17,29 +17,38 @@ def links(content_soup,url):
         for a in content_soup_all_a:
             
             href=a.get('href')
+        
             parse_url=urlparse(href)
             #print (check_if_seed_hostname(parse_url),parse_url.netloc)
-            print href
-            if parse_url.scheme=='':
+            if href==None:
                 pass
-            
+            elif href=="":
+                pass
             elif parse_url.fragment and not parse_url.scheme:
                 
                 pass
             elif parse_url.scheme:
-            
-               links.append(str(href))
+                if check_if_seed_hostname(parse_url):
+                    links.append(str(href))
+                    
+                else:
+                    
+                    pass
+                
+                
                 
             else:
                 
                 absolute_link=urljoin(url,str(href))
                 links.append(absolute_link)
+                
     except:
         print 'Error in get_all_links.py'+url
         return links
     links=list(set(links))
     return links
-c=urlopen('http://www.joblistghana.com')
-page=c.read();
 
-print links(soup(page),'http://www.joblistghana.com')
+#c=urlopen('http://www.google.com')
+#page=c.read();
+
+#print links(soup(page),'http://www.google.com')

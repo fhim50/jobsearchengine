@@ -1,6 +1,9 @@
 def add_to_search_index(index,keyword,url):
-    for entry in index:
-            if entry[0]==keyword:
-                entry[1].append(url)
-                return 
-    index.append([keyword,[url]])
+  try:
+    if keyword in index:
+        index[keyword].append(url)
+    else:
+        index[keyword]=[url]
+    print index
+  except:
+      print 'problem from search indexes'
