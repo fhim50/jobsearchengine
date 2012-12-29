@@ -52,7 +52,3 @@ def compute_ranks(graph):
 #index , graph = crawl_web('http://www.xkcd.com')
 #ranks = compute_ranks(graph)
 #print ranks
-
-'''
-was not pushing
-'''
