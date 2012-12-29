@@ -19,7 +19,7 @@ def links(content_soup,url):
             href=a.get('href')
         
             parse_url=urlparse(href)
-            #print (check_if_seed_hostname(parse_url),parse_url.netloc)
+            
             if href==None:
                 pass
             elif href=="":

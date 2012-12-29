@@ -8,7 +8,7 @@ from responses import check_response
  
 def get_page(url):
         try:
-            print 'url:'+url
+            
             parse_dict=urlparse(url)
             if parse_dict.scheme:
             
