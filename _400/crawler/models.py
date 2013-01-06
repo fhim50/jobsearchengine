@@ -12,12 +12,17 @@ class Searchword(models.Model):
         return self.keyword
 
     def get_url(self):
-	return "/keywords/url"
+	return "some/keywords/url"
+
 
 class Page(models.Model):
     serchword = models.ForiegnKey(Searchword)
     url = models.CharField(max_length = 100)
     title = models.CharField(max_length = )
+    def page_preview():
+         return " content  preview"
+         pass
+    page_preview = models.TextField(max_length = "some number" , default = page_preview() ) 
     rank = models.FloatField(max_degit = 19 , decimal_places = "some_number" , editable = False)
 
     def number_clicks():
