@@ -8,7 +8,17 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+"""
+Database settings for prototype engine , uncomment origin too use ...if not done
+"""
+import dj_database_url
+DATABASES = {
+    'default': 
+        dj_database_url.config(default="sqlite:/prototype_db.db")
+        
+}
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -24,7 +34,7 @@ DATABASES = {
    #           }
 
 }
-
+'''
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -113,14 +123,14 @@ WSGI_APPLICATION = '_400.wsgi.application'
 SYS_ROOT = os.path.dirname(os.path.realpath(__file__))
 
 TEMPLATE_DIRS = (
-    os.path.join(SYSTEM_ROOT,'templates'),
+    os.path.join(SYS_ROOT,'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
 INSTALLED_APPS = (
-    'crawler',
+    #'crawler',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -129,6 +139,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'engine_pro',# comment it...... pls
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

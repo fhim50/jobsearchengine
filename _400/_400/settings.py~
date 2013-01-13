@@ -1,5 +1,5 @@
 # Django settings for _400 project.
-
+import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -8,11 +8,21 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+"""
+Database settings for prototype engine , uncomment origin too use ...if not done
+"""
+import dj_database_url
+DATABASES = {
+    'default': 
+        dj_database_url.config(default="sqlite:/prototype_db.db")
+        
+}
 
+'''
 DATABASES = {
     'default': {
-        'ENGINE': 'django_mongodb_engine', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '400django_db',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': '400mongo.db',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -24,7 +34,7 @@ DATABASES = {
    #           }
 
 }
-
+'''
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -110,14 +120,17 @@ ROOT_URLCONF = '_400.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = '_400.wsgi.application'
 
+SYS_ROOT = os.path.dirname(os.path.realpath(__file__))
+
 TEMPLATE_DIRS = (
+    os.path.join(SYS_ROOT,'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
 )
 
 INSTALLED_APPS = (
-    'crawler',
+    #'crawler',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -126,6 +139,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
+    'engine_pro',# comment it...... pls
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
