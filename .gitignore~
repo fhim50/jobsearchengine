@@ -2,6 +2,7 @@
 *.pot
 *.pyc
 *.db
+*.db-journal
 local_settings.py
 
 _400/engine_pro_backup

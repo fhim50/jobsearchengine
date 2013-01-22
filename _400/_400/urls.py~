@@ -14,5 +14,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^start/', 'engine_pro.views.start_crawler')
+    url(r'^start/', 'engine_pro.views.start_crawler'),
+	url(r'^pro/', include('engine_pro.urls')),
 )

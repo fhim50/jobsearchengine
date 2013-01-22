@@ -1,0 +1,16 @@
+{% extends "prototype/base.html"%}
+{% block extrastyle %}
+{% endblock%}
+{% block main %}
+
+<!-- Search box -->
+<div class="input-append">
+		<form  action = "" method ="post">{% csrf_token %}
+<center class="center">
+                <input class="span5" id='appendedInputButton' size="1" "height=50px width=400px type="text" name="q" ><button class="btn btn-primary " input type="submit" value="Submit">        &nbsp; &nbsp; &nbsp;<i class="icon-ok"></i>&nbsp; &nbsp; &nbsp</button>
+</center>
+</form>
+                
+</div>
+
+{% endblock %}

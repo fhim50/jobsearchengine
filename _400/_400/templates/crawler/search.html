@@ -1,0 +1,11 @@
+{% extends "prototype/base.html"%}
+{{usr}}
+{% block main %}
+<!-- Search box -->
+<div class="input-append">
+		<form  action = /crawler/search/ method = "post">
+                <input class="span5" id='appendedInputButton' size="1" "height=50px width=400px type="text"name="search_term"><button class="btn btn-primary " input type="submit" value="Submit">        &nbsp; &nbsp; &nbsp;<i class="icon-ok"></i>&nbsp; &nbsp; &nbsp</button></form>
+                
+</div>
+
+{% endblock %}
